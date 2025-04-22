@@ -1,7 +1,11 @@
-import { Box } from '@chakra-ui/react'
+import MainDescription from 'app/components/description/main-description'
 
 const About = () => {
-  return <Box>About</Box>
+  return (
+    <>
+      <MainDescription />
+    </>
+  )
 }
 
 export default About

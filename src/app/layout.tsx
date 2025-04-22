@@ -4,6 +4,7 @@ import './globals.css'
 import { Providers } from './providers'
 import Navbar from './components/header/navbar'
 import Footer from './components/footer/footer'
+import { Grid } from '@chakra-ui/react'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,9 +30,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Providers>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
+          <Grid templateRows="auto 1fr auto" minHeight="100vh" width="100%">
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </Grid>
         </Providers>
       </body>
     </html>

@@ -1,7 +1,7 @@
-import { Box } from '@chakra-ui/react'
+import FormContact from 'app/components/form/form-contact'
 
 const Contact = () => {
-  return <Box>Contact Us</Box>
+  return <FormContact />
 }
 
 export default Contact

@@ -7,7 +7,7 @@ import { IoHome } from 'react-icons/io5'
 import { IoLogoWhatsapp } from 'react-icons/io'
 
 const Navbar = () => {
-  const logoItem = { title: 'Arcontainer', path: '/home', icon: <PiMountainsFill /> }
+  const logoItem = { title: 'Posta de los Rio', path: '/home', icon: <PiMountainsFill /> }
   const pathsLinks = [
     { title: 'Inicio', path: '/home', icon: <IoHome /> },
     { title: 'Nosotros', path: '/about', icon: <FaUsers /> },
@@ -15,7 +15,14 @@ const Navbar = () => {
   ]
 
   return (
-    <Grid templateColumns="repeat(3, 1fr)" h="75px" alignItems="center" px={4}>
+    <Grid
+      templateColumns="repeat(3, 1fr)"
+      h="75px"
+      alignItems="center"
+      px={4}
+      borderBottom="1px solid"
+      borderColor="gray.100"
+    >
       <Box
         justifySelf="start"
         fontWeight="bold"
@@ -47,8 +54,10 @@ const Navbar = () => {
               transform: 'translateY(-2px)',
             }}
           >
-            {link.icon}
-            <Link href={link.path}>{link.title}</Link>
+            <Link href={link.path} style={{ display: 'grid', justifyItems: 'center' }}>
+              {link.icon}
+              {link.title}
+            </Link>
           </ListItem>
         ))}
       </List>
