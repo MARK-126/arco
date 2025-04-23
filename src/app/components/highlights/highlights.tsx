@@ -1,10 +1,10 @@
 import { Box, Center, Flex, Grid, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 const highlightsCards = [
-  { title: 'Trekking', image: '/images/trekking.png' },
-  { title: 'Mountain Bike', image: '/images/mountain-bike.png' },
-  { title: 'Naturaleza', image: '/images/zorros.png' },
-  { title: 'Fogones', image: '/images/fogon.png' },
+  { title: 'Trekking', image: './images/trekking.png' },
+  { title: 'Mountain Bike', image: './images/mountain-bike.png' },
+  { title: 'Naturaleza', image: './images/zorros.png' },
+  { title: 'Fogones', image: './images/fogon.png' },
 ]
 
 const Highlights = () => {
