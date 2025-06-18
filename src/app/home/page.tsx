@@ -13,6 +13,7 @@ const Home = () => {
       <DisclaimerDescription />
       <Services />
       <ContainerSecondBaner />
+      <ContainerSecondBaner />
     </Stack>
   )
 }
