@@ -1,6 +1,6 @@
-import MainDescription from 'app/components/description/main-description'
+import MainDescription from 'components/description/MainDescription'
 
-const About = () => {
+const AboutPage = () => {
   return (
     <>
       <MainDescription />
@@ -8,4 +8,4 @@ const About = () => {
   )
 }
 
-export default About
+export default AboutPage

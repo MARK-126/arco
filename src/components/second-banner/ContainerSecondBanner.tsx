@@ -1,5 +1,5 @@
 import { Center, Grid } from '@chakra-ui/react'
-import SecondBanner from 'app/components/second-banner/second-banner'
+import SecondBanner from 'components/second-banner/SecondBanner'
 
 const ContainerSecondBaner = () => {
   return (

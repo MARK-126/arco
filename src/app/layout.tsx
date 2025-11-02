@@ -1,19 +1,22 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import './globals.css'
 import { Providers } from './providers'
-import Navbar from './components/header/navbar'
-import Footer from './components/footer/footer'
 import { Grid } from '@chakra-ui/react'
+import Navbar from 'components/header/Navbar'
+import Footer from 'components/footer/Footer'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
+  display: 'swap',
+  preload: true,
 })
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+  display: 'swap',
+  preload: true,
 })
 
 export const metadata: Metadata = {
@@ -30,9 +33,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Providers>
-          <Grid templateRows="auto 1fr auto" minHeight="100vh" width="100%">
+          <Grid>
             <Navbar />
-            <main>{children}</main>
+            <main style={{ minHeight: '100vh', marginBottom: '64px' }}>{children}</main>
             <Footer />
           </Grid>
         </Providers>

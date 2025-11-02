@@ -8,8 +8,10 @@ const SecondBanner = () => {
         <Image
           src="/images/second-banner.png"
           alt="second-banner"
-          width={1000}
-          height={100}
+          fill
+          sizes="1300px"
+          quality={80}
+          loading="lazy"
           style={{
             filter: 'blur(.5px)',
             objectFit: 'cover',

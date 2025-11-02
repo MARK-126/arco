@@ -1,7 +1,12 @@
-import FormContact from 'app/components/form/form-contact'
+import dynamic from 'next/dynamic'
 
-const Contact = () => {
+const FormContact = dynamic(() => import('components/form/FormContact'), {
+  ssr: true,
+  loading: () => <div>Cargando formulario...</div>,
+})
+
+const ContactPage = () => {
   return <FormContact />
 }
 
-export default Contact
+export default ContactPage

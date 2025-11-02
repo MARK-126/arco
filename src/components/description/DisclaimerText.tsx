@@ -1,5 +1,3 @@
-'use client'
-
 import { Center, Grid, Text } from '@chakra-ui/react'
 
 const DisclaimerDescription = () => {

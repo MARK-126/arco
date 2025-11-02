@@ -1,6 +1,7 @@
 import { Box, Center, Grid, Stack, Text } from '@chakra-ui/react'
 import { FaWifi } from 'react-icons/fa'
 import { MdBathroom, MdFoodBank } from 'react-icons/md'
+
 const Services = () => {
   return (
     <Center mt={20} flexDirection="column" gap={10}>
@@ -15,11 +16,11 @@ const Services = () => {
           </Text>
         </Stack>
         <Box display="flex" justifyContent="center" alignItems="center" w="100%">
-          <MdFoodBank size={150} style={{ color: 'orange' }} />
+          <MdFoodBank size={120} style={{ color: 'orange' }} />
         </Box>
 
         <Box display="flex" justifyContent="center" alignItems="center" w="100%">
-          <MdBathroom size={150} style={{ color: 'orange' }} />
+          <MdBathroom size={120} style={{ color: 'orange' }} />
         </Box>
         <Stack textAlign="center">
           <Text fontSize="22px" fontWeight="bold">
@@ -41,7 +42,7 @@ const Services = () => {
           </Text>
         </Stack>
         <Box display="flex" justifyContent="center" w="100%">
-          <FaWifi size={150} style={{ color: 'orange' }} />
+          <FaWifi size={120} style={{ color: 'orange' }} />
         </Box>
       </Grid>
     </Center>
