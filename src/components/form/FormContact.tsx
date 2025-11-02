@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Center, FormControl, FormLabel, Grid, Input, Stack, Text, Textarea, useToast, Alert, AlertIcon } from '@chakra-ui/react'
+import { Button, Center, FormControl, FormLabel, Grid, Input, Stack, Text, Textarea, useToast } from '@chakra-ui/react'
 import { useState } from 'react'
 
 const FormContact = () => {
@@ -8,7 +8,7 @@ const FormContact = () => {
     name: '',
     email: '',
     message: '',
-    phone: ''
+    phone: '',
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const toast = useToast()
@@ -17,7 +17,7 @@ const FormContact = () => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }))
   }
 
@@ -29,9 +29,9 @@ const FormContact = () => {
       const response = await fetch('http://localhost:5001/api/contact', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       })
 
       const data = await response.json()
@@ -43,7 +43,7 @@ const FormContact = () => {
           status: 'success',
           duration: 5000,
           isClosable: true,
-          position: 'top'
+          position: 'top',
         })
 
         // Limpiar formulario
@@ -51,7 +51,7 @@ const FormContact = () => {
           name: '',
           email: '',
           message: '',
-          phone: ''
+          phone: '',
         })
       } else {
         toast({
@@ -60,7 +60,7 @@ const FormContact = () => {
           status: 'error',
           duration: 5000,
           isClosable: true,
-          position: 'top'
+          position: 'top',
         })
       }
     } catch (error) {
@@ -70,9 +70,9 @@ const FormContact = () => {
         status: 'error',
         duration: 5000,
         isClosable: true,
-        position: 'top'
+        position: 'top',
       })
-      console.error('Error:', error)
+      alert(`Error: ${error}`)
     } finally {
       setIsSubmitting(false)
     }
