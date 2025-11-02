@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Arco — Frontend (Next.js)
 
-## Getting Started
+Descripción
+-----------
 
-First, run the development server:
+Este directorio (`arco/`) contiene la aplicación frontend de la plataforma Arco. Es una app construida con Next.js (App Router) y TypeScript que ofrece la interfaz pública: listados de paquetes turísticos, detalle de paquete y formulario de contacto.
+
+Este README está orientado exclusivamente al frontend: estructura, scripts, cómo ejecutarlo y dónde encontrar los componentes más importantes.
+
+Stack y dependencias clave
+-------------------------
+- Framework: Next.js (App Router)
+- Lenguaje: TypeScript
+- Bundler / runtime: Node.js (para desarrollo y producción)
+- Carpetas principales: `app/`, `components/`, `public/`
+
+Estructura relevante (dentro de `arco/`)
+-------------------------------------
+- `app/` — rutas y páginas (App Router). Contiene `layout.tsx`, `page.tsx` y subrutas como `about/`, `contact/`, `packages/`.
+- `src/components/` (o `components/`) — componentes reutilizables: `header`, `footer`, `hero-section`, `packages`, `form`, etc.
+- `public/` — activos públicos (imágenes, favicons, etc.).
+- `next.config.*`, `tsconfig.json`, `package.json` — configuración y scripts.
+
+Archivos destacados
+-------------------
+- `app/page.tsx` — entrada principal de la página.
+- `app/layout.tsx` — layout global y providers.
+- `src/components/*` — componentes UI (Hero, Navbar, Footer, PackageCard, FormContact, etc.).
+
+Requisitos previos
+------------------
+- Node.js (v16+ recomendable)
+- npm o pnpm/yarn
+
+Cómo ejecutar en desarrollo
+---------------------------
+
+1) Instalar dependencias
+
+```bash
+cd arco
+npm install
+```
+
+2) Ejecutar en modo desarrollo
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+La app estará disponible en http://localhost:3000 y se recargará automáticamente al editar archivos.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Scripts comunes
+--------------
+- `dev` — arranca Next.js en modo desarrollo.
+- `build` — construye la aplicación para producción.
+- `start` — inicia el servidor de producción (después de `build`).
+- `lint` — corre ESLint (si está configurado en `package.json`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Conexión con la API
+-------------------
 
-## Learn More
+El frontend consume una API REST para obtener y enviar datos (paquetes y mensajes de contacto). Para las pruebas locales necesitás que esa API esté disponible (por ejemplo, un servidor en `http://localhost:5001`). Este README no documenta la API — la implementación del backend se encuentra en el directorio `server/` del repositorio raíz.
 
-To learn more about Next.js, take a look at the following resources:
+Buenas prácticas y notas para desarrollo
+--------------------------------------
+- Mantener componentes pequeños y reutilizables dentro de `src/components`.
+- Usar rutas del App Router (carpeta `app/`) para nuevas páginas.
+- Añadir tipos TypeScript para props y respuestas de la API.
+- Si vas a cambiar endpoints o el shape de la API, actualizá también los tipos y los hooks/fetchers que consumen la API.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Contribuir
+----------
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Cread una rama para cada feature: `feature/nombre-descriptivo` o `fix/descripcion`.
+- Acompañad los cambios con una breve descripción en el PR. Si tocás la interfaz pública o los datos, documentalo en el README o en comentarios del PR.
 
-## Deploy on Vercel
+Licencia
+--------
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- No hay licencia definida en este directorio. Si queréis publicar el proyecto con términos claros, añadid un `LICENSE` en la raíz del repo.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contacto
+-------
+
+Si necesitás que también prepare un README separado y detallado para el backend (`server/`), o que agregue un `.env.example` y adapte la configuración para desarrollo, decíme y lo hago.
+
