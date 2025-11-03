@@ -31,7 +31,8 @@ const PackagesPage = () => {
   useEffect(() => {
     const fetchPackages = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/packages?is_active=true')
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001'
+        const response = await fetch(`${apiUrl}/api/packages?is_active=true`)
         const data = await response.json()
 
         if (data.success) {

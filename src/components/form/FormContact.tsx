@@ -26,7 +26,8 @@ const FormContact = () => {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('http://localhost:5001/api/contact', {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001'
+      const response = await fetch(`${apiUrl}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
