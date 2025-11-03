@@ -9,7 +9,10 @@ RUN npm run build
 # Etapa de producción
 FROM node:18-alpine
 WORKDIR /app
-RUN npm install -g serve
-COPY --from=builder /app/out ./out
+COPY package*.json ./
+RUN npm ci --only=production
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/next.config.ts ./next.config.ts
 EXPOSE 3000
-CMD ["serve", "-s", "out", "-l", "3000"]
+CMD ["npm", "start"]
